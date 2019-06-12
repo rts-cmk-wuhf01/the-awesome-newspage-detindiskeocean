@@ -1,17 +1,33 @@
+const mysql = require('../config/mysql');
+
 module.exports = (app) => {
+
+	app.get('/database', async (req, res, next) => {
+
+		let db = await mysql.connect();
+		let [products] = await db.execute('SELECT * FROM products');
+		db.end();
+
+		// res.send(products);
+
+		res.render('products', {
+			'products': products
+		});
+
+	});
 
 	app.get('/', (req, res, next) => {
 
-		let product = [
-			{
-				"product": "product 1",
-				"price": 200
-			},
-			{
-				"product": "product 2",
-				"price": 300
-			}
-		];
+		// let product = [
+		// 	{
+		// 		"product": "product 1",
+		// 		"price": 200
+		// 	},
+		// 	{
+		// 		"product": "product 2",
+		// 		"price": 300
+		// 	}
+		// ]; 
 
     	res.render('home', {
 			"title": "Home",
