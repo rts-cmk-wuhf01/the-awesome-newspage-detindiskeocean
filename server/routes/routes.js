@@ -2,19 +2,25 @@ const mysql = require('../config/mysql');
 
 module.exports = (app) => {
 
-	app.get('/database', async (req, res, next) => {
+	// app.get('/database', async (req, res, next) => {
 
-		let db = await mysql.connect();
-		let [products] = await db.execute('SELECT * FROM products');
-		db.end();
+	// 	let db = await mysql.connect();
+	// 	let [products] = await db.execute('SELECT * FROM products');
+	// 	db.end();
 
-		// res.send(products);
+	// 	// res.send(products);
 
-		res.render('products', {
-			'products': products
-		});
+	// 	res.render('products', {
+	// 		'products': products
+	// 	});
 
-	});
+	// });
+
+	app.get('/categories-post/:category_id', async (req, res, next) => {
+		
+		res.send(req.params.category_id); 
+	 
+	 });
 
 	app.get('/', (req, res, next) => {
 
