@@ -51,6 +51,46 @@ module.exports = (app) => {
 		res.render('contact');
 	});
 
+	// // app.post('/contact', (req, res, next) => {
+		
+	// 	res.render('contact');
+
+	// // 	// res.send(req.body);
+
+	// // 	 // indsamling af værdierne og oprettelse af de nødvendige variabler.
+	// // 	 let name = req.body.name;
+	// // 	 let email = req.body.email;
+	// // 	 let subject = req.body.subject;
+	// // 	 let message = req.body.message;
+	// // 	 let contactDate = new Date();
+	  
+	// // 	 // håndter valideringen, alle fejl pushes til et array så de er samlet ET sted
+	// // 	 let return_message = [];
+	// // 	 if (name == undefined || name == '') {
+	// // 		return_message.push('Navn mangler');
+	// // 	 }
+	// // 	 if (email == undefined || email == '') {
+	// // 		return_message.push('Email mangler');
+	// // 	 }
+	// // 	 if (subject == undefined || subject == '') {
+	// // 		return_message.push('Emne mangler');
+	// // 	 }
+	// // 	 if (message == undefined || message == '') {
+	// // 		return_message.push('Beskedteksten mangler');
+	// // 	 }
+	  
+	// // 	 // dette er et kort eksempel på strukturen, denne udvides selvfølgelig til noget mere brugbart
+	// // 	 // hvis der er 1 eller flere elementer i `return_message`, så mangler der noget
+	// // 	 if (return_message.length > 0) {
+	// // 		// der er mindst 1 information der mangler, returner beskeden som en string.
+	// // 		res.send(return_message.join(', '));
+	// // 	 } else {
+	// // 		// send det modtagede data tilbage, så vi kan se det er korrekt
+	// // 		res.send(req.body);
+	// // 	 }
+
+	// //  });
+
 
 	// EKSEMPEL PÅ ARRAY
 	// app.get('/', (req, res, next) => {
